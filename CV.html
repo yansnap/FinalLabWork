@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My CV</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Internal styles */
+        h2 {
+            font-variant: small-caps;
+        }
+        .course-title {
+            color: #6a1b9a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="theme-checkbox">
+          <span class="slider round"></span>
+        </label>
+        <span id="theme-label">Тема</span>
+    </div>
+    <h1 style="text-transform: uppercase; letter-spacing: 1px;">Yan Kozhyn</h1>
+
+    <p>Email: <span style="color: #1e88e5;">jan.kozhyn@gmail.com</span></p>
+    <p>Phone: <span style="color: #1e88e5;">+380932014857</span></p>
+
+    <hr>
+
+    <h2>Profile</h2>
+    <p>Results-driven software engineering student from Lviv Polytechnic National University, passionate about Microsoft .NET platform and having knowledge of software development life cycle and basic Computer Science principles. Seeking to help software development company develop their products as software engineer and develop my own coding skills.</p>
+
+    <hr>
+
+    <h2>Work Experience</h2>
+    <h3>Junior .NET Developer - Webitel</h3>
+    <p>December 2022 - April 2024</p>
+    <ul>
+        <li>Worked with packages developed for the CRM-system Creatio</li>
+        <li>Provided assistance with support tickets and bug fixes</li>
+        <li>Developed new features</li>
+    </ul>
+    <p><strong>Tech Stack:</strong> C#, JavaScript, SQL Server, PostgreSQL, Docker</p>
+
+    <hr>
+
+    <h2>Project</h2>
+    <h3>Dating App</h3>
+    <p>May 2022 - November 2022</p>
+    <p>It is a dating site written by Udemy course "Build an app with ASP.NET Core and Angular from scratch"</p>
+    <p>Tech Stack: Asp .Net Core Web API, Angular, SignalR, TypeScript, HTML/CSS</p>
+    <p>Link to project: <a href="https://github.com/YanKozhyn/DatingApp">GitHub</a></p>
+
+    <hr>
+
+    <h2>Courses</h2>
+    <ul>
+        <li><span class="course-title">Sigma .Net Camp</span> (October 2022 - February 2023)</li>
+        <p>Git, GitHub, Basics of C#, OOP C#, Collection in C#, Delegates and events, LINQ, SOLID principles</p>
+        <li><span class="course-title">Python A-Level</span> (October 2022 - April 2023)</li>
+        <p>Git, GitHub, Basics of Python, Python OOP, Linux, PostgreSQL, Front-End, Django, Deploy CI/CD</p>
+        <li><span class="course-title">C# Marathon, SoftServe</span> (March 2022 - May 2022)</li>
+        <p>ASP.Net Core MVC, Git, GitHub, EntityFrameworkCore, Linq, multithreading and concurrency, unit testing of web application with NUnit, SOLID principles, work in team, Microsoft SQL Server.</p>
+        <li><span class="course-title">OOP C#, SoftServe</span> (February 2022 - March 2022)</li>
+        <p>.Net Framework, Linq, Enum, Struct, Code convention, Work with files, Unit tests, Serialization, Exceptions, SQL.</p>
+    </ul>
+
+    <hr>
+
+    <h2>Certificates</h2>
+    <ul>
+        <li>EF SET Certificate: 57/100 (B2 Upper-Intermediate)</li>
+        <li>C# ONLINE MARATHON by SoftServe</li>
+        <li>OBJECT-ORIENTED PROGRAMMING. C# by SoftServe</li>
+    </ul>
+
+    <hr>
+
+    <h2>Education</h2>
+    <h3>Lviv Polytechnic National University</h3>
+    <p>Cybersecurity (2022 - 2026)</p>
+
+    <hr>
+
+    <h2>Skills</h2>
+    <ul class="skills-list">
+        <li>C#, LINQ, Python, OOP, SOLID</li>
+        <li>ASP.NET Core Web API, MVC</li>
+        <li>SQL, EF Core, PostgreSQL, SQL Server</li>
+        <li>HTML, CSS, JavaScript, TypeScript</li>
+        <li>SignalR, Angular</li>
+        <li>Git, GitHub</li>
+        <li>Visual Studio Code, Rider</li>
+    </ul>
+
+    <hr>
+
+    <!-- Коментарі -->
+    <section id="comments-section">
+        <h2>Коментарі з JSONPlaceholder</h2>
+        <ul id="comments-list"></ul>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <h2>Інформація про браузер і систему</h2>
+        <ul id="localStorage-data"></ul>
+    </footer>
+
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Зворотній зв'язок</h2>
+          <form action="https://formspree.io/f/mrbqpzlj" method="POST">
+            <label for="name">Ім’я:</label>
+            <input type="text" name="name" required>
+      
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+      
+            <label for="phone">Телефон:</label>
+            <input type="tel" name="phone" required>
+      
+            <label for="message">Повідомлення:</label>
+            <textarea name="message" rows="4" required></textarea>
+      
+            <button type="submit">Відправити</button>
+          </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

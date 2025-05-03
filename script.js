@@ -83,27 +83,41 @@ function setThemeByTime() {
 }
 
 document.addEventListener('click', function (e) {
-    const fireworksCount = 10;
+    const fireworksCount = 20;
 
     for (let i = 0; i < fireworksCount; i++) {
         const spark = document.createElement('div');
         spark.classList.add('spark');
 
-        // Рандомне зміщення і розмір
-        const size = Math.random() * 8 + 4;
-        const offsetX = (Math.random() - 0.5) * 100;
-        const offsetY = (Math.random() - 0.5) * 100;
+        const size = Math.random() * 6 + 4;
+        const offsetX = (Math.random() - 0.5) * 150;
+        const offsetY = (Math.random() - 0.5) * 150;
 
         spark.style.width = `${size}px`;
         spark.style.height = `${size}px`;
-        spark.style.left = `${e.clientX + offsetX}px`;
-        spark.style.top = `${e.clientY + offsetY}px`;
+        spark.style.left = `${e.pageX}px`;
+        spark.style.top = `${e.pageY}px`;
+
+        // Рандомний колір
+        const colors = ['#ff3f3f', '#ffcc00', '#33cc33', '#3399ff', '#cc33ff'];
+        spark.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+        // Додамо початковий translate для анімації розльоту
+        spark.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(0.5)`;
+        spark.style.opacity = '1';
 
         document.body.appendChild(spark);
 
-        // Анімація зникнення
+        // Анімація затухання
+        setTimeout(() => {
+            spark.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
+            spark.style.transform = `translate(${offsetX * 2}px, ${offsetY * 2}px) scale(0)`;
+            spark.style.opacity = '0';
+        }, 20);
+
+        // Видалити після анімації
         setTimeout(() => {
             spark.remove();
-        }, 800);
+        }, 1000);
     }
 });

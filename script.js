@@ -82,4 +82,28 @@ function setThemeByTime() {
     return hour >= 7 && hour < 21 ? "light" : "dark";
 }
 
+document.addEventListener('click', function (e) {
+    const fireworksCount = 10;
 
+    for (let i = 0; i < fireworksCount; i++) {
+        const spark = document.createElement('div');
+        spark.classList.add('spark');
+
+        // Рандомне зміщення і розмір
+        const size = Math.random() * 8 + 4;
+        const offsetX = (Math.random() - 0.5) * 100;
+        const offsetY = (Math.random() - 0.5) * 100;
+
+        spark.style.width = `${size}px`;
+        spark.style.height = `${size}px`;
+        spark.style.left = `${e.clientX + offsetX}px`;
+        spark.style.top = `${e.clientY + offsetY}px`;
+
+        document.body.appendChild(spark);
+
+        // Анімація зникнення
+        setTimeout(() => {
+            spark.remove();
+        }, 800);
+    }
+});
